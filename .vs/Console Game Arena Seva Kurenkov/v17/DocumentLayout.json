@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\sevak\\source\\repos\\Console Game Arena Seva Kurenkov\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\sevak\\source\\repos\\Console Game Arena Seva Kurenkov\\Wordly\\Wordly.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Wordly\\Wordly.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\sevak\\source\\repos\\Console Game Arena Seva Kurenkov\\Wordly\\Wordly.vcxproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Wordly\\Wordly.vcxproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Wordly.vcxproj",
+              "DocumentMoniker": "C:\\Users\\sevak\\source\\repos\\Console Game Arena Seva Kurenkov\\Wordly\\Wordly.vcxproj",
+              "RelativeDocumentMoniker": "Wordly\\Wordly.vcxproj",
+              "ToolTip": "C:\\Users\\sevak\\source\\repos\\Console Game Arena Seva Kurenkov\\Wordly\\Wordly.vcxproj",
+              "RelativeToolTip": "Wordly\\Wordly.vcxproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000698|",
+              "WhenOpened": "2026-10-12T19:50:29.428Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Wordly.cpp",
+              "DocumentMoniker": "C:\\Users\\sevak\\source\\repos\\Console Game Arena Seva Kurenkov\\Wordly\\Wordly.cpp",
+              "RelativeDocumentMoniker": "Wordly\\Wordly.cpp",
+              "ToolTip": "C:\\Users\\sevak\\source\\repos\\Console Game Arena Seva Kurenkov\\Wordly\\Wordly.cpp",
+              "RelativeToolTip": "Wordly\\Wordly.cpp",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAAAkAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-10-12T19:50:28.404Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
