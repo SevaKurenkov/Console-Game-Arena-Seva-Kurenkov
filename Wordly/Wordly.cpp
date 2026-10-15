@@ -69,7 +69,9 @@ public:
         int comand = 1;
         while (true){
             std::cout << "Доступные команды:" << "\n" << "0 - выйти" << "\n" << "1 - выбрать цель (затем ввести номер 1-3)" << "\n" << "2 - атаковать выбранную цель" << "\n" << "3 - использовать аптечку" << "\n" << "\n";
-            std::cin >> comand;
+            if (!(std::cin >> comand)) {
+                return;
+            }
             std::cout << "\n";
             if (comand == 0) {
                 std::cout << "Выбрана команда выхода" << "\n" << "\n";
@@ -93,6 +95,7 @@ public:
                 if (currentTarget != nullptr) {
                     player.Attack(*currentTarget);
                     if (AllEnemiesDefeated()) {
+                        currentTarget = nullptr;
                         PrintFighters(player, enemies, currentTarget);
                         std::cout << "Игрок победил!" << "\n" << "\n";
                         break;
