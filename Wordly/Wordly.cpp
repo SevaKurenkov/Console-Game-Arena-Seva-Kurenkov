@@ -113,7 +113,7 @@ public:
             }
             if (comand == 3) {
                 std::cout << "Выбрана команда использования аптечки" << "\n" << "\n";
-                if (player.IsAlive() && medkits > 0) {
+                if (player.IsAlive() && medkits > 0 && currentTarget != nullptr) {
                     player.Heal(8);
                     medkits--;
                     if (currentTarget->IsAlive()) {
@@ -126,7 +126,7 @@ public:
                     }
                 }
                 else {
-                    std::cout << "Ошибка: Нет оптечек или игрок мёртв!" << "\n" << "\n";
+                    std::cout << "Ошибка: Нет оптечек или игрок мёртв или нет цели!" << "\n" << "\n";
                 }
             }
         }
