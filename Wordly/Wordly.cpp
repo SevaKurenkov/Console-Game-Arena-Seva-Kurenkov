@@ -38,7 +38,15 @@ public:
     void PrintStatus() const {
         std::cout << "Имя: " << name << "\n" << "Здоровье: " << health << "\n" << "Максимальное здоровье: " << maxHealth << "\n" << "Урон: " << damage << "\n" << "\n";
     }
-
+    void Heal(int amount) {
+        if (health + amount >= maxHealth) {
+            health = maxHealth;
+        }
+        else
+        {
+            health += amount;
+        }
+    }
 };
 
 class Game {
@@ -46,10 +54,11 @@ private:
     Fighter player;
     Fighter enemies[3];
     Fighter* currentTarget = nullptr;
+    int medkits = 1;
 public:
 
     Game()
-        : player("Hero", 30, 8),
+        : player("Hero", 20, 8),
         enemies{ {"Enemy 1", 12, 3},
         {"Enemy 2", 18, 4},
         {"Enemy 3", 24, 5} } {
@@ -59,24 +68,27 @@ public:
         PrintFighters(player, enemies, currentTarget);
         int comand = 1;
         while (true){
-            std::cout << "Доступные команды:" << "\n" << "0 - выйти" << "\n" << "1 - выбрать цель (затем ввести номер 1-3)" << "\n" << "2 - атаковать выбранную цель" << "\n" << "\n";
+            std::cout << "Доступные команды:" << "\n" << "0 - выйти" << "\n" << "1 - выбрать цель (затем ввести номер 1-3)" << "\n" << "2 - атаковать выбранную цель" << "\n" << "3 - использовать аптечку" << "\n" << "\n";
             std::cin >> comand;
             std::cout << "\n";
             if (comand == 0) {
+                std::cout << "Выбрана команда выхода" << "\n" << "\n";
                 break;
             }
             if (comand == 1) {
+                std::cout << "Выбрана команда выбора цели" << "\n" << "\n";
                 int target = -1;
                 std::cin >> target;
                 while (!TrySelectTarget(target, currentTarget)){
-                    std::cout << "Цель уже мёртва или неверная, введите цель заново" << "\n" << "\n";
+                    std::cout << "Ошибка: Цель уже мёртва или неверная, введите цель заново" << "\n" << "\n";
                     std::cin >> target;
                 }
                 std::cout << "Цель изменена" << "\n" << "\n";
             }
             if (comand == 2) {
+                std::cout << "Выбрана команда атаки выбранной цели" << "\n" << "\n";
                 if (currentTarget == nullptr) {
-                    std::cout << "Цель уже мёртва или не выбрана, введите другую цель" << "\n" << "\n";
+                    std::cout << "Ошибка: Цель уже мёртва или не выбрана, введите другую цель" << "\n" << "\n";
                 }
                 if (currentTarget != nullptr) {
                     player.Attack(*currentTarget);
@@ -98,7 +110,24 @@ public:
                         PrintFighters(player, enemies, currentTarget);
                     }
                 }
-
+            }
+            if (comand == 3) {
+                std::cout << "Выбрана команда использования аптечки" << "\n" << "\n";
+                if (player.IsAlive() && medkits > 0) {
+                    player.Heal(8);
+                    medkits--;
+                    if (currentTarget->IsAlive()) {
+                        currentTarget->Attack(player);
+                        PrintFighters(player, enemies, currentTarget);
+                        if (!player.IsAlive()) {
+                            std::cout << "Игрок проиграл!" << "\n" << "\n";
+                            break;
+                        }
+                    }
+                }
+                else {
+                    std::cout << "Ошибка: Нет оптечек или игрок мёртв!" << "\n" << "\n";
+                }
             }
         }
 
@@ -120,6 +149,7 @@ public:
         else {
             std::cout << "нет цели" << "\n" << "\n";
         }
+        std::cout << "Аптечки: " << medkits << "\n" << "\n";
         
     }
 
